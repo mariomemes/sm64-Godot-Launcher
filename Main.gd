@@ -45,3 +45,6 @@ func _on_OptionButton_item_selected(index):
 		$Label.text = "sm64ex-alo Godot Launcher"
 		project = "sm64ex-alo"
 		repo = "https://github.com/AloXado320/sm64ex-alo.git"
+
+func _on_Exit_pressed():
+	OS.kill(OS.get_process_id())
