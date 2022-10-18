@@ -26,6 +26,7 @@ theme = ExtResource( 2 )
 text = "Launch"
 
 [node name="Build" type="Button" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -35,15 +36,32 @@ margin_top = 85.0
 margin_right = 250.0
 margin_bottom = 205.0
 theme = ExtResource( 2 )
+disabled = true
 text = "Build"
 
+[node name="SelectROM" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = 85.0
+margin_right = 250.0
+margin_bottom = 205.0
+theme = ExtResource( 2 )
+text = "Select ROM"
+
 [node name="Label" type="Label" parent="."]
-margin_left = 440.0
-margin_top = 310.0
-margin_right = 1515.0
-margin_bottom = 430.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -525.0
+margin_top = -230.0
+margin_right = 382.0
+margin_bottom = -113.0
 custom_fonts/font = SubResource( 1 )
-text = "sm64plus Godot Launcher"
+text = "sm64 Godot Launcher"
 
 [node name="RomSelector" type="FileDialog" parent="."]
 margin_left = 174.0
@@ -55,7 +73,18 @@ mode_overrides_title = false
 mode = 0
 access = 2
 
+[node name="Project" type="OptionButton" parent="."]
+margin_left = 710.0
+margin_top = 770.0
+margin_right = 1210.0
+margin_bottom = 890.0
+theme = ExtResource( 2 )
+text = "sm64-port"
+items = [ "sm64-port", null, false, 0, null, "sm64plus", null, false, 1, null, "sm64ex", null, false, 2, null, "sm64ex-alo", null, false, 3, null ]
+selected = 0
+
 [connection signal="pressed" from="Launch" to="." method="_on_Launch_pressed"]
 [connection signal="pressed" from="Build" to="." method="_on_Build_pressed"]
-[connection signal="file_selected" from="RomSelector" to="." method="_on_RomSelector_file_selected"]
+[connection signal="pressed" from="SelectROM" to="." method="_on_SelectROM_pressed"]
 [connection signal="popup_hide" from="RomSelector" to="." method="_on_RomSelector_popup_hide"]
+[connection signal="item_selected" from="Project" to="." method="_on_OptionButton_item_selected"]
