@@ -102,7 +102,7 @@ margin_right = 250.0
 margin_bottom = 59.4799
 theme = ExtResource( 2 )
 text = "sm64-port"
-items = [ "sm64-port", null, false, 0, null, "sm64plus", null, false, 1, null, "sm64ex", null, false, 2, null, "sm64ex-alo", null, false, 3, null ]
+items = [ "sm64-port", null, false, 0, null, "sm64plus", null, false, 1, null, "sm64ex", null, false, 2, null, "sm64ex-alo", null, false, 3, null, "sm64ex-coop", null, false, 4, null, "Render96ex", null, false, 5, null ]
 selected = 0
 
 [connection signal="pressed" from="Launch" to="." method="_on_Launch_pressed"]
